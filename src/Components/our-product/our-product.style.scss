@@ -1,0 +1,33 @@
+$green_color: rgb(17, 138, 81);
+
+.our-product{
+    position: relative;
+    padding: 40px 0px;
+
+    &::before{
+        content: '';
+        position: absolute;
+        z-index: 3;
+        width: 4px;
+        height: 80px;
+        left: 50%;
+        border-radius: 4px;
+        background: $green_color ;
+    }
+    &-header{
+        display: block;
+        text-align: center;
+        padding: 30px;
+        font-size: 2rem;
+        margin-top: 80px;
+    }
+    
+    &-content{
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        width: 100%;
+        overflow: hidden;
+        height: 300px;
+    }
+}

@@ -1,0 +1,29 @@
+$green_color: rgb(17, 138, 81);
+.product{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    
+    &:hover .product-name {
+        color: $green_color;
+        width: 200px;
+        border-bottom: 2px solid $green_color;
+    }
+
+    .product-name{
+        position: absolute;
+        color: black;
+        width: 150px;
+        border-bottom: 2px solid black;
+        font-size: 1.2rem;
+        font-weight: 300;
+        bottom: 20px;
+        left: 20px;
+        transition: 400ms ease-in-out;
+    }
+    .product-image{
+        width: 120%;
+        object-fit: cover;
+        object-position: bottom center;
+    }
+}

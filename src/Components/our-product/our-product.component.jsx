@@ -25,7 +25,7 @@ const OurProduct = ({ plants }) => {
       <div className="our-product-header">OUR PRODUCTS</div>
       <div className="our-product-content">
         {data.map((plant) => (
-          <PlantPreview {...plant}/>
+          <PlantPreview key={plant.id} {...plant}/>
         ))}
       </div>
     </div>

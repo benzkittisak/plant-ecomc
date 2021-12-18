@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
+import { addItem } from "../../redux/cart/cart.action";
+
 import "./plant-preview.style.scss";
 
-const PlantPreview = ({ plants }) => {
-  const { title, routeName } = plants;
+const PlantPreview = ({ plants:{title , items , routeName}, addItem }) => {
   const currencyFormatter = new Intl.NumberFormat('th-TH' , {
     style:'currency',
     currency:'THB'
@@ -19,13 +22,13 @@ const PlantPreview = ({ plants }) => {
         {title}
       </Link>
       <div className="plant-preview">
-        {plants.items.slice(0, 4).map(({ id, name, imageUrl , price }) => (
-          <div className="product" key={id}>
-            <span className="product-name">{name}</span>
-            <img src={imageUrl} className="product-image" />
-            <span className="product-price">{currencyFormatter.format(price)}</span>
+        {items.slice(0, 4).map((item) => (
+          <div className="product" key={item.id}>
+            <span className="product-name">{item.name}</span>
+            <img src={item.imageUrl} className="product-image" />
+            <span className="product-price">{currencyFormatter.format(item.price)}</span>
             <div className="hover">
-              <div className="add-to-cart">
+              <div className="add-to-cart" onClick={() => addItem(item)}>
                 เพิ่มลงตะกร้าสินค้า
               </div>
             </div>
@@ -38,4 +41,8 @@ const PlantPreview = ({ plants }) => {
   );
 };
 
-export default PlantPreview;
+const mapDispatchToProps = dispatch => ({
+  addItem : (item) => dispatch(addItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(PlantPreview);

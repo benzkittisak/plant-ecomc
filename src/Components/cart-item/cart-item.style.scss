@@ -1,0 +1,30 @@
+.item-container {
+    position: relative;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+
+    .item-image img {
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+      padding: 5px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+    }
+    .item-name {
+      width: 100%;
+      justify-content: start;
+      text-align: left;
+      padding: 15px;
+      font-weight: 200;
+    }
+    .item-price {
+      font-size: 14px;
+
+      .item-qty {
+        padding-left: 10px;
+      }
+    }
+  }

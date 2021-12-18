@@ -2,16 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import { currencyFormatter } from "../../assets/utils/currency.formatter";
+
 import { addItem } from "../../redux/cart/cart.action";
 
 import "./plant-preview.style.scss";
 
 const PlantPreview = ({ plants:{title , items , routeName}, addItem }) => {
-  const currencyFormatter = new Intl.NumberFormat('th-TH' , {
-    style:'currency',
-    currency:'THB'
-  });
-
   return (
     // <div className="product" key={id}>
     //   <span className="product-name">{name}</span>

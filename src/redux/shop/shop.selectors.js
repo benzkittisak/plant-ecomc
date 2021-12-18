@@ -19,7 +19,9 @@ export const selectRandomPlantForOurProduct = createSelector(
     Object.entries(collections).map((plant) =>
       plant[1].items.map((value) => data.push(value))
     );
-    return data.sort(() =>Math.random(data.length) - Math.random(data.length)).slice(0,4);
+    return data
+      .sort(() => Math.random(data.length) - Math.random(data.length))
+      .slice(0, 4);
   }
 );
 

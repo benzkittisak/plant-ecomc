@@ -1,0 +1,18 @@
+$green_color: rgb(17, 138, 81);
+
+.button{
+    background: white;
+    display: block;
+    font-weight: 300;
+    padding: 15px;
+    margin-top: 20px;
+    border:1px solid lightgray;
+    border-radius: 30px;
+    transition: 400ms ease-in-out;
+    cursor: pointer;
+    &:hover{
+        background-color: $green_color;
+        border-color: $green_color;
+        color: white;
+    }
+}

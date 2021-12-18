@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from "../Navbar/Navbar.component";
+import CartIcon from "../cart-icon/cart-icon.component";
 
 import "./Header.style.scss";
 
@@ -12,9 +13,11 @@ const Header = () => {
         <div className="header-column">
           <div className="header-header">Plant</div>
         </div>
-        <div className="header-column">ไว้จะใส่พวกตะกร้าสินค้ากับ Login ละกัน</div>
+        <div className="header-column">
+          <CartIcon />
+        </div>
       </div>
-     <Navbar/>
+      <Navbar />
     </header>
   );
 };

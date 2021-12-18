@@ -16,7 +16,7 @@ const HomePage = ({plants}) => {
         <div className="homepage-container">
             <ImageSlider/>
             <PlantOverview  plants={plants}/>
-            <OurProduct  plants={plants}/>
+            <OurProduct/>
         </div>
     )
 }

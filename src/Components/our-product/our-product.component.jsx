@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
+import {selectPlantsForPreview} from '../../redux/shop/shop.selectors';
 
 import "./our-product.style.scss";
 
@@ -28,5 +32,8 @@ const OurProduct = ({ plants }) => {
     </div>
   );
 };
+const mapStateToProps = createStructuredSelector({
+  plants:selectPlantsForPreview
+})
 
-export default OurProduct;
+export default connect(mapStateToProps)(OurProduct);

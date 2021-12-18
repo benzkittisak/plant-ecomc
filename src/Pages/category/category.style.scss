@@ -1,0 +1,15 @@
+.category-page{
+    display: block;
+    position: relative;
+
+    .category-title{
+        font-weight: 500;
+    }
+
+    .category-collections{
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+}

@@ -2,7 +2,7 @@ const PLANTS_DATA = {
   houseplants: {
     id: 1,
     title: "House Plants",
-    routeName: "shop/house-plants",
+    routeName: "shop/houseplants",
     previewImage:
       "https://i2.fpic.cc/file/img-b1/2021/12/17/pexels-scott-webb-1931143.jpg",
     items: [
@@ -92,7 +92,7 @@ const PLANTS_DATA = {
   officeplants:{
     id:11,
     title:'Office Plants',
-    routeName:'shop/office-plants',
+    routeName:'shop/officeplants',
     previewImage:'https://i2.fpic.cc/file/img-b1/2021/12/17/pexels-daria-shevtsova-970089.jpg',
     items:[
       {

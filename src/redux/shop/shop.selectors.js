@@ -1,22 +1,22 @@
 import { createSelector } from "reselect";
 
-const selectPlant = (state) => state.plants;
+const selectPlant = (state) => state.shop;
 
 export const selectCollections = createSelector(
   [selectPlant],
-  (plants) => plants.plants
+  (shop) => shop.plants
 );
 
 export const selectPlantsForPreview = createSelector(
   [selectCollections],
-  (collections) => Object.keys(collections).map((key) => collections[key])
+  (plants) => Object.keys(plants).map((key) => plants[key])
 );
 
 export const selectRandomPlantForOurProduct = createSelector(
   [selectCollections],
-  (collections) => {
+  (plants) => {
     const data = [];
-    Object.entries(collections).map((plant) =>
+    Object.entries(plants).map((plant) =>
       plant[1].items.map((value) => data.push(value))
     );
     return data
@@ -28,5 +28,15 @@ export const selectRandomPlantForOurProduct = createSelector(
 export const selectCollection = (collectionUrlParam) =>
   createSelector(
     [selectCollections],
-    (collections) => collections[collectionUrlParam]
+    (plants) =>plants ? plants[collectionUrlParam] : null
   );
+
+export const selectCollectionFetching = createSelector(
+  [selectPlant],
+  plants => plants.isFetching
+)
+
+export const selectIsCollectionsLoaded = createSelector(
+  [selectPlant],
+  plants => !!plants.plants
+)

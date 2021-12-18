@@ -1,33 +1,30 @@
-import React, { useEffect , useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./our-product.style.scss";
 
-import PlantPreview from '../plant-preview/plant-preview.component';
+import PlantPreview from "../plant-preview/plant-preview.component";
 
 const OurProduct = ({ plants }) => {
-  const [data , setData] = useState([]);
+  const [data, setData] = useState({items:[]});
 
   const fetchData = () => {
     Object.entries(plants).map((plant) =>
-      plant[1].items.map((value) => data.push(value))
+      plant[1].items.map((value) => data.items.push(value))
     );
-    return data
+    return data.items
       .sort(() => Math.random(data.length) - Math.random(data.length))
       .slice(0, 4);
   };
 
   useEffect(() => {
-     setData(fetchData())
-  }, [])
+    setData({items:fetchData()});
+  }, []);
 
   return (
     <div className="our-product">
       <div className="our-product-header">OUR PRODUCTS</div>
-      <div className="our-product-content">
-        {data.map((plant) => (
-          <PlantPreview key={plant.id} {...plant}/>
-        ))}
-      </div>
+
+      <PlantPreview plants={data} />
     </div>
   );
 };

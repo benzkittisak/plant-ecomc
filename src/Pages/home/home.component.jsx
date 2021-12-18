@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import {selectPlantsForPreview} from '../../redux/plant/plants.selectors';
+import {selectPlantsForPreview} from '../../redux/shop/shop.selectors';
 
 import ImageSlider from "../../Components/image-slide-section/image-slide-section.component";
 import PlantOverview from "../../Components/plants-overview/plants-overview.component";

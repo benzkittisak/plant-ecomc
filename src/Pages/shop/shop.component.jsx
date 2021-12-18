@@ -5,7 +5,7 @@ import PlantCategoryOverview from "../../Components/plant-category-overview/plan
 
 import './shop.style.scss';
 
-const ShopPage = (props) => {
+const ShopPage = () => {
 
     return(
         <div className="shop-page">

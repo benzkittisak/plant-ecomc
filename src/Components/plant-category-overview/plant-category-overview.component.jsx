@@ -1,11 +1,27 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
+import {selectPlantsForPreview} from '../../redux/shop/shop.selectors';
+
+import PlantPreview from "../plant-preview/plant-preview.component";
 
 import './plant-category-overview.style.scss';
 
-const PlantCategoryOverview = () => {
+const PlantCategoryOverview = ({plants}) => {
     return(
-        <div>Category Page</div>
+        <div className="category-overview">
+            {
+                plants.map(({id , ...otherProps}) => 
+                    <PlantPreview key={id} plants={{...otherProps}} />
+                )
+            }
+        </div>
     )
 }
 
-export default PlantCategoryOverview
+const mapStateToProps = createStructuredSelector({
+    plants:selectPlantsForPreview
+})
+
+export default connect(mapStateToProps)(PlantCategoryOverview)

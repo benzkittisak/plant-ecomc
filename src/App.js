@@ -10,7 +10,7 @@ import Footer from './Components/footer/footer.component';
 import HomePage from './Pages/home/home.component'
 import NotFoundPage from './Pages/not-found/not-found.component';
 import ShopPage from './Pages/shop/shop.component';
-
+import CheckoutPage from './Pages/checkout/checkout.component'
 
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
         <Route path="/" exact element={<HomePage/>}/>
         <Route path="/shop/*" element={<ShopPage/>}/>
         <Route path="*" exact element={<NotFoundPage/>}/>
+        <Route path="/checkout" exact element={<CheckoutPage/>}/>
       </Routes>
 
       <Footer/>

@@ -119,7 +119,7 @@ const PLANTS_DATA = {
   gardenplants:{
     id:14,
     title:'Graden Plants',
-    routeName:'shop/garden-plants',
+    routeName:'shop/gardenplants',
     previewImage:'https://i2.fpic.cc/file/img-b1/2021/12/17/pexels-scott-webb-1048035.jpg',
     items:[
       {

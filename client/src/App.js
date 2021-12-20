@@ -11,7 +11,7 @@ import HomePage from './Pages/home/home.component'
 import NotFoundPage from './Pages/not-found/not-found.component';
 import ShopPage from './Pages/shop/shop.component';
 import CheckoutPage from './Pages/checkout/checkout.component'
-
+import SucessPaymentPage from './Pages/success_payment/success-payment.component';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
         <Route path="/shop/*" element={<ShopPage/>}/>
         <Route path="*" exact element={<NotFoundPage/>}/>
         <Route path="/checkout" exact element={<CheckoutPage/>}/>
+        <Route path="/success" exact element={<SucessPaymentPage/>} />
       </Routes>
 
       <Footer/>

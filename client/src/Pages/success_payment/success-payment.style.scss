@@ -1,0 +1,52 @@
+.success-payment{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    align-items: center;
+
+    &-icon-container{
+        position: relative;
+        border-radius: 50%;
+        border: 5px solid green;
+        animation: popup 600ms ease-in-out;
+    }
+
+    &-icon{
+        padding: 50px;
+        font-size: 40px;
+        color: green;
+        font-weight: 6000;
+    }
+    &-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        span{
+            font-weight: 300;
+            
+        }
+        a{
+            font-weight: 500;
+            padding: 0px 5px;
+            text-decoration: none;
+            color: green;
+        }
+    }
+}
+
+@keyframes popup {
+    0%{
+        transform: scale(0);
+    }
+
+    70%{
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}

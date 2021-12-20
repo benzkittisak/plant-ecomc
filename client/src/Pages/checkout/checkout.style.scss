@@ -41,5 +41,23 @@
         }
     }
 
+    .demo-container{
+        border: 1px solid lightgray;
+        width: 50vw;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        justify-content: center;
+        text-align: center;
+        .demo-header{
+            font-size: 24px;
+            color: red;
+        }
 
+        .demo-number , .demo-other{
+            font-weight: 200;
+            font-size: 18px;
+        }
+    }
 }

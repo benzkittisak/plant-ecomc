@@ -1,9 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
+import { clearItemFromCart, removeItem } from "../../redux/cart/cart.action";
+
 import { currencyFormatter } from "../../assets/utils/currency.formatter";
 
 import './cart-item.style.scss';
 
-const CartItem = ({ name, imageUrl, price, quantity }) => {
+const CartItem = ({item , removeItem}) => {
+  const { name, imageUrl, price, quantity } = item
     return(
         <div className="item-container">
           <div className="item-image">
@@ -18,8 +22,15 @@ const CartItem = ({ name, imageUrl, price, quantity }) => {
               <span className="item-qty">(x{quantity})</span>
             </div>
           </div>
+          <div className="remove" onClick={() => removeItem(item)}>
+            x
+          </div>
         </div>
     )
 }
 
-export default CartItem;
+const mapDispatchToProps = dispatch => ({
+  removeItem : item => dispatch(clearItemFromCart(item))
+})
+
+export default connect(null,mapDispatchToProps)(CartItem);

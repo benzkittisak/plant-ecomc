@@ -26,9 +26,11 @@ const CheckoutPage = ({ cartItems , total }) => {
         <div className="header-block">ราคา</div>
         <div className="header-block">ลบสินค้า</div>
       </div>
-      {cartItems.map((item) => (
+      {cartItems.length > 0 ? cartItems.map((item) => (
           <CheckoutItems cartItem={item} key={item.id} />
-      ))}
+      )) : 
+        <h4>ไม่มีสินค้าในตะกร้า</h4>
+      }
       <div className="checkout-footer">
           <span>รวมราคาทั้งหมด</span>
           <span className="total">
@@ -37,6 +39,18 @@ const CheckoutPage = ({ cartItems , total }) => {
       </div>
 
         <StripeButton cartItems={cartItems}/>
+
+      <div className="demo-container">
+        <div className="demo-header">
+          กรุณาใช้ข้อมูลบัตรต่อไปนี้เพื่อชำระเงิน
+        </div>
+        <span className="demo-number">
+          หมายเลขบัตร <span className="demo-number-text">4242 4242 4242 4242</span>
+        </span>
+        <div className="demo-other">
+          วันหมดอายุ : 05/24 CVV : 999
+        </div>
+      </div>
     </div>
   );
 };

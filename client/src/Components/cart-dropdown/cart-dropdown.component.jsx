@@ -17,7 +17,7 @@ const CartDropdown = ({ cartItems, dispatch }) => {
     <div className="cart-dropdown">
       {cartItems.length ? (
         cartItems.map((cartItem) => (
-          <CartItem key={cartItem.id} {...cartItem} />
+          <CartItem key={cartItem.id} item={cartItem} />
         ))
       ) : (
         <span className="cart-empty">ไม่มีสินค้าในตะกร้า</span>

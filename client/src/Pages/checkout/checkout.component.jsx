@@ -8,6 +8,8 @@ import {currencyFormatter} from '../../assets/utils/currency.formatter';
 
 
 import CheckoutItems from "../../Components/checkout-item/checkout-item.component";
+import StripeButton from "../../Components/stripe-button/stripe-button.component";
+
 
 import "./checkout.style.scss";
 
@@ -33,6 +35,8 @@ const CheckoutPage = ({ cartItems , total }) => {
               {currencyFormatter.format(total)}
           </span>
       </div>
+
+        <StripeButton cartItems={cartItems}/>
     </div>
   );
 };

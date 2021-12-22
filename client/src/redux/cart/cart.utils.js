@@ -4,13 +4,12 @@ export const addToCart = (cartItems, cartItemToAdd) => {
   );
 
   if (existingCartItem) {
-    return cartItems.map((cartItem) =>
+    return  cartItems.map((cartItem) =>
       cartItem.id === cartItemToAdd.id
         ? { ...cartItem, quantity: cartItem.quantity + 1 }
         : cartItem
     );
   }
-
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
 
@@ -20,7 +19,9 @@ export const removeItemFromCart = (cartItems, itemToRemove) => {
   );
 
   if (existingCartItem.quantity === 1) {
-    return cartItems.filter((item) => item.id !== itemToRemove.id);
+     return cartItems.filter(
+      (item) => item.id !== itemToRemove.id
+    );
   }
 
   return cartItems.map((item) =>
@@ -28,4 +29,5 @@ export const removeItemFromCart = (cartItems, itemToRemove) => {
       ? { ...item, quantity: item.quantity - 1 }
       : item
   );
+
 };

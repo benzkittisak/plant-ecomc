@@ -1,13 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-
 import { currencyFormatter } from "../../assets/utils/currency.formatter";
 
 import { addItem } from "../../redux/cart/cart.action";
 
 import "./collection-item.style.scss";
 
-const CollectionItem = ({ item, addItem }) => {
+const CollectionItem = ({ item, addItem  }) => {
   return (
     <div className="product">
       <span className="product-name">{item.name}</span>
@@ -23,6 +22,7 @@ const CollectionItem = ({ item, addItem }) => {
     </div>
   );
 };
+
 
 const mapDispatchToProps = (dispatch) => ({
   addItem: (item) => dispatch(addItem(item)),

@@ -1,40 +1,44 @@
-.sign-in-sing-up-button{
-    position: relative;
+.sign-in-sing-up-button {
+  position: relative;
+  width: 100%;
+  .s-button {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+  }
+
+  .sign-out {
+    display: flex;
     width: 100%;
-    .s-button{
-        display: block;
-        padding: 10px 20px;
-        text-decoration: none;
-        color: black;
-        font-weight: 300;
+    justify-content: space-between;
+    align-items: center;
+
+    .displayName {
+      font-size: 16px;
+      font-weight: 400;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 35%;
+      white-space: nowrap;
     }
 
-    .sign-out{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
+    .sign-out-button {
+      display: block;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 20px;
+      background: unset;
+      border: 1px solid red;
+      outline: none;
+      color: red;
+      transition: 400ms ease-in-out;
 
-        .displayName{
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        .sign-out-button{
-            display: block;
-            cursor: pointer;
-            padding: 10px 15px;
-            border-radius: 20px;
-            background:unset;
-            border: 1px solid red;
-            outline: none;
-            color: red;
-            transition: 400ms ease-in-out;
-
-            &:hover{
-                background-color: red;
-                color: white;
-            }
-        }
+      &:hover {
+        background-color: red;
+        color: white;
+      }
     }
+  }
 }

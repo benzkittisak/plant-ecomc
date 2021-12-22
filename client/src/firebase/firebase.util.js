@@ -44,7 +44,6 @@ export const getCurrentUser = () => {
   })
 }
 
-
 firebase.initializeApp(config)
 
 export const auth = firebase.auth();

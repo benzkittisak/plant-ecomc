@@ -20,7 +20,7 @@ import CheckoutPage from "./Pages/checkout/checkout.component";
 import SucessPaymentPage from "./Pages/success_payment/success-payment.component";
 import SignInAndSignUpPage from "./Pages/signin-signup/signin-signup.component";
 
-function App({ checkUserSession, currentUser }) {
+function App({ checkUserSession, currentUser  }) {
   useEffect(() => {
     checkUserSession();
   }, [checkUserSession]);

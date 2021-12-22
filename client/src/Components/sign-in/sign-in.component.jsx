@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-import { googleSignInStart } from "../../redux/user/user.actions";
+import { googleSignInStart , emailSignInStart } from "../../redux/user/user.actions";
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
 import "./sign-in.style.scss";
 
-const SignIn = ({googleSignInStart}) => {
+const SignIn = ({googleSignInStart , emailSignInStart}) => {
   const [userData, setUserData] = useState({ email: "", password: "" });
   const { email, password } = userData;
 
@@ -17,12 +17,16 @@ const SignIn = ({googleSignInStart}) => {
     setUserData({ ...userData, [name]: value });
   };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    emailSignInStart(email,password)
+  }
   return (
     <div className="sign-in">
       <h2 className="title">มีบัญชีอยู่แล้วหรือ ?</h2>
       <span>เข้าสู่ระบบด้วยอีเมลของคุณกันเลย</span>
 
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <FormInput
           type="email"
           name="email"
@@ -49,7 +53,8 @@ const SignIn = ({googleSignInStart}) => {
   );
 };
 const mapDispatchToProps = dispatch => ({
-  googleSignInStart: () => dispatch(googleSignInStart())
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email,password) => dispatch(emailSignInStart({email , password}))
 })
 
 export default connect(null,mapDispatchToProps)(SignIn);

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { clearItemFromCart, removeItem } from "../../redux/cart/cart.action";
+import { clearItemFromCart } from "../../redux/cart/cart.action";
 
 import { currencyFormatter } from "../../assets/utils/currency.formatter";
 

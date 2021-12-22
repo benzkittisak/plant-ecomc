@@ -13,6 +13,10 @@
         position: relative;
         &:last-child{
             text-align: right;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
         }
         .header-header {
             font-size: 50px;

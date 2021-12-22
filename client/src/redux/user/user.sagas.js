@@ -8,6 +8,7 @@ import {
   auth,
   googleProvider,
   createProfileDocument,
+  getCurrentUser
 } from "../../firebase/firebase.util";
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
@@ -29,10 +30,26 @@ export function* signInWithGoogle() {
   }
 }
 
+export function* isUserAuthenticated(){
+  try {
+    const userRef = yield getCurrentUser();
+    if(!userRef) return;
+    yield getSnapshotFromUserAuth(userRef)
+  } catch (error) {
+    yield put(signInFailure(error))
+  }
+}
+
+// Function for call
+
+export function* onCheckingUserSession() {
+  yield takeLatest(userActionTypes.CHECK_USER_SESSION, isUserAuthenticated);
+}
+
 export function* onGoogleSignStart() {
   yield takeLatest(userActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle);
 }
 
 export function* userSaga() {
-  yield all([call(onGoogleSignStart)]);
+  yield all([call(onGoogleSignStart), call(onCheckingUserSession)]);
 }

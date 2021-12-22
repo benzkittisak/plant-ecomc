@@ -35,6 +35,16 @@ export const createProfileDocument = async (userAuth , additionalData) => {
   return userRef;
 }
 
+export const getCurrentUser = () => {
+  return new Promise((res, rej) => {
+    const unsubscibe = auth.onAuthStateChanged(userAuth => {
+      unsubscibe();
+      res(userAuth)
+    } , rej)
+  })
+}
+
+
 firebase.initializeApp(config)
 
 export const auth = firebase.auth();

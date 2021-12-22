@@ -4,18 +4,19 @@ import {createStructuredSelector} from 'reselect'
 import { Link } from "react-router-dom";
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
+import { signOutStart } from "../../redux/user/user.actions";
 
 import "./sign-in-sign-up-button.style.scss";
 
-const SignInSignUpButton = ({currentUser}) => {
+const SignInSignUpButton = ({currentUser , signOut}) => {
   return (
     <div className="sign-in-sing-up-button">
       {
         currentUser ? (
           
           <div className="sign-out">
-            <span className="displayName">{currentUser.displayName.split(' ')[0]}</span>
-            <button type="button" className="sign-out-button">ออกจากระบบ</button>
+            <span className="displayName">{currentUser.displayName}</span>
+            <button type="button" onClick={signOut} className="sign-out-button">ออกจากระบบ</button>
           </div>
         ) : (
            <Link className="s-button" to={"/signin"}>
@@ -32,4 +33,8 @@ const mapStateToProps = createStructuredSelector({
   currentUser : selectCurrentUser
 })
 
-export default connect(mapStateToProps)(SignInSignUpButton);
+const mapDispathToProps = dispatch => ({
+  signOut : () => dispatch(signOutStart())
+})
+
+export default connect(mapStateToProps , mapDispathToProps)(SignInSignUpButton);

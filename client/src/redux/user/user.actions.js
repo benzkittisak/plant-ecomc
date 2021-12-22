@@ -17,3 +17,30 @@ export const signInFailure = (error) => ({
 export const checkUserSession = () => ({
   type:userActionTypes.CHECK_USER_SESSION
 })
+
+// Sign out actions
+export const signOutStart = () => ({
+  type:userActionTypes.SIGN_OUT_START
+})
+export const signOutSuccess = () => ({
+  type:userActionTypes.SIGN_OUT_SUCCESS
+})
+export const signOutFailure = (error) => ({
+  type:userActionTypes.SIGN_OUT_FAILURE,
+  payload:error
+})
+
+
+// Sign up actions
+export const signUpStart = (userData) => ({
+  type:userActionTypes.SIGN_UP_START,
+  payload:userData
+})
+export const signUpSuccess = ({user , additionalData}) => ({
+  type:userActionTypes.SIGN_UP_SUCCESS,
+  payload:{user , additionalData}
+})
+export const signUpFailure = (error) => ({
+  type:userActionTypes.SIGN_UP_FAILURE,
+  payload:error
+})

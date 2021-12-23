@@ -1,15 +1,18 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectPlantSection } from "../../redux/plants/plants.selector";
 import { useNavigate } from "react-router-dom";
 
 import './plants-overview.style.scss';
 
-const PlantOverview = ({plants}) => {
+const PlantOverview = ({sections}) => {
     const navigate = useNavigate();
     return(
         <div className="plant-overview">
           {
-              plants.map(plant => 
-                <div onClick={() => navigate(`${plant.routeName}`)} className="plant-container" key={plant.id} style={{backgroundImage:`url("${plant.previewImage}")`}}>
+              sections.map(plant => 
+                <div onClick={() => navigate(`${plant.linkUrl}`)} className="plant-container" key={plant.id} style={{backgroundImage:`url("${plant.previewImage}")`}}>
                     <div className="plant-content">
                         <div className="plant-title">
                             {plant.title}
@@ -22,4 +25,8 @@ const PlantOverview = ({plants}) => {
     )
 }
 
-export default PlantOverview;
+const mapStateToProps = createStructuredSelector({
+    sections:selectPlantSection
+})
+
+export default connect(mapStateToProps)(PlantOverview);

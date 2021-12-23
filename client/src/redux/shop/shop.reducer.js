@@ -1,14 +1,12 @@
 import ShopActionTypes from "./shop.type";
 
-import PLANTS_DATA from "./shop.data";
-
 const INITIAL_STATE = {
-    plants : PLANTS_DATA,
+    plants : null,
     isFetching:false,
     errorMessage:undefined
 }
 
-const plantReducer = (state = INITIAL_STATE , action) => {
+const shopReducer = (state = INITIAL_STATE , action) => {
     switch(action.type){
         case ShopActionTypes.FETCH_COLLECTIONS_START:
             return{
@@ -26,4 +24,4 @@ const plantReducer = (state = INITIAL_STATE , action) => {
     }
 }
 
-export default plantReducer;
+export default shopReducer;

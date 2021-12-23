@@ -1,28 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import {selectPlantsForPreview} from '../../redux/shop/shop.selectors';
+import { fetchCollectionStart } from "../../redux/shop/shop.action";
 
 import ImageSlider from "../../Components/image-slide-section/image-slide-section.component";
 import PlantOverview from "../../Components/plants-overview/plants-overview.component";
-import OurProduct from "../../Components/our-product/our-product.component";
+import OutProductContainer from "../../Components/our-product/out-product.container";
+import "./home.style.scss";
 
-import './home.style.scss';
+const HomePage = ({ fetchCollectionStart }) => {
+  useEffect(() => {
+    fetchCollectionStart();
+  }, [fetchCollectionStart]);
 
-const HomePage = ({plants}) => {
+  return (
+    <div className="homepage-container">
+      <ImageSlider />
+      <PlantOverview />
+      <OutProductContainer />
+    </div>
+  );
+};
 
-    return(
-        <div className="homepage-container">
-            <ImageSlider/>
-            <PlantOverview  plants={plants}/>
-            <OurProduct/>
-        </div>
-    )
-}
 
-const mapStateToProps = createStructuredSelector({
-    plants:selectPlantsForPreview
-})
+const mapDispatchToProps = (dispatch) => ({
+  fetchCollectionStart: () => dispatch(fetchCollectionStart()),
+});
 
-export default connect(mapStateToProps)(HomePage);
+export default connect(null, mapDispatchToProps)(HomePage);

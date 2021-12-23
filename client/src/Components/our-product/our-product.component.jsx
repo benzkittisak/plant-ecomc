@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { selectPlantsForPreview } from "../../redux/shop/shop.selectors";
 import { createStructuredSelector } from "reselect";
 
-import {selectPlantsForPreview} from '../../redux/shop/shop.selectors';
 
 import "./our-product.style.scss";
 
 import PlantPreview from "../plant-preview/plant-preview.component";
 
 const OurProduct = ({ plants }) => {
-  const [data, setData] = useState({items:[]});
+  const [data, setData] = useState({ items: [] });
 
   const fetchData = () => {
     Object.entries(plants).map((plant) =>
@@ -21,7 +21,8 @@ const OurProduct = ({ plants }) => {
   };
 
   useEffect(() => {
-    setData({items:fetchData()});
+
+    setData({ items: fetchData() });
   }, []);
 
   return (
@@ -32,6 +33,7 @@ const OurProduct = ({ plants }) => {
     </div>
   );
 };
+
 const mapStateToProps = createStructuredSelector({
   plants:selectPlantsForPreview
 })

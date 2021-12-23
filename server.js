@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require('path');
 const compression = require("compression");
 
 require("dotenv").config();
@@ -18,6 +19,13 @@ app.use(express.static("public"));
 app.listen(PORT, () => {
   console.log("Connected to port 6000");
 });
+
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.join(__dirname , 'client/build')))
+  app.get('*' , function(req,res){
+    res.sendFile(path.join(__dirname , 'client/build' , 'index.html'))
+  })
+}
 
 app.post("/create-checkout-session", async (req, res) => {
   try {
@@ -46,7 +54,3 @@ app.post("/create-checkout-session", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-app.get('/' , (req,res) => {
-    res.json({message : 'Hello !!!'})
-})

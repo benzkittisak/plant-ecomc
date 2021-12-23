@@ -4,7 +4,9 @@
   justify-content: end;
   cursor: pointer;
   width: 100%;
-
+  @media screen and (max-width:800px) {
+    justify-content: center;
+  }
   .cart-container {
     display: flex;
     padding: 10px 20px;

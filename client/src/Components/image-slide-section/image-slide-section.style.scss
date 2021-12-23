@@ -10,6 +10,11 @@
   background-color: rgba($color: white, $alpha: 0.7);
   padding: 20px;
   border-radius: 50%;
+
+  @media screen and (max-width:800px) {
+    font-size: 1rem;
+    padding: 5px;
+  }
 }
 
 
@@ -22,16 +27,25 @@
   align-items: center;
   overflow: hidden;
 
+  @media screen and (max-width:800px) {
+    height: 350px;
+  }
+
   .slide-image {
     width: 100vw;
     object-fit: cover;
     position: relative;
     object-position: center center;
+    @media screen and (max-width:800px) {
+      height: 350px;
+    }
   }
 
   .right-arrow {
     @include imageSlideStyle();
     right: 32px;
+
+    
   }
 
   .left-arrow {

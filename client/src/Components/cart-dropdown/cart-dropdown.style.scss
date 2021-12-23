@@ -12,8 +12,11 @@
   z-index: 13;
   overflow: scroll;
   border-radius: 10px;
-
-  .cart-empty{
+  @media screen and (max-width: 800px) {
+    top: 150px;
+    right: 5px;
+  }
+  .cart-empty {
     font-weight: 200;
     display: block;
   }

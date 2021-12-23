@@ -27,6 +27,9 @@ const SignInAndSignUpPage = lazy(() =>
   import("./Pages/signin-signup/signin-signup.component")
 );
 
+const AboutPage = lazy(()=> import('./Pages/about/about.component'))
+
+
 // import { addCollectionAndItems } from "./firebase/firebase.util";
 // import { selectPlantsForPreview } from "./redux/shop/shop.selectors";
 
@@ -42,6 +45,7 @@ function App({ checkUserSession, currentUser /*, collectionsArray */ }) {
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" exact element={<HomePage />} />
+          <Route path="/about" exact element={<AboutPage />} />
           <Route path="/shop/*" element={<ShopPage />} />
           <Route path="*" exact element={<NotFoundPage />} />
           <Route path="/checkout" exact element={<CheckoutPage />} />

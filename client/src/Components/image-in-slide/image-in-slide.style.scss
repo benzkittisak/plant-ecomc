@@ -38,6 +38,11 @@ $green_color: rgb(17, 138, 81);
     display: block;
 
     @include slideDownAnimation(500ms);
+
+    @media screen and (max-width:800px) {
+      font-size: .7rem;
+      width: 200px;
+    }
   }
   .header {
     display: block;
@@ -48,6 +53,10 @@ $green_color: rgb(17, 138, 81);
     margin-bottom: 20px;
 
     @include slideDownAnimation(600ms);
+
+    @media screen and (max-width:800px) {
+      font-size: 1.5rem;
+    }
   }
 
   .shop_button {
@@ -61,6 +70,10 @@ $green_color: rgb(17, 138, 81);
 
     @include slideDownAnimation(700ms);
 
+    @media screen and (max-width:800px) {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
     &:hover {
       background: white;
       border: 2px solid $green_color;

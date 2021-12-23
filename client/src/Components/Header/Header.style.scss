@@ -1,40 +1,47 @@
-.header-container{
+.header-container {
+  position: relative;
+  text-align: center;
+  .header-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+    }
+  }
+  .header-column {
+    width: 100%;
+    padding: 15px;
     position: relative;
-    text-align: center;
-    .header-grid{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
+    &:last-child {
+      text-align: right;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
     }
-    .header-column{
-        width: 100%;
-        padding: 15px;
-        position: relative;
-        &:last-child{
-            text-align: right;
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header-header {
-            font-size: 50px;
-            padding: 0;
-            margin: 0 auto;
-            font-family: 'Open Sans Condensed', sans-serif;
-            position: relative;
-            &::after{
-                content: '';
-                position: absolute;
-                width: 8px;
-                height: 8px;
-                background-color: rgb(45, 138, 102);
-                z-index: 1;
-                border-radius: 50%;
-                bottom: 7px;
-                margin-left: 4px;
-            }
-        }
+    @media screen and (max-width:800px) {
+        padding: 5px 0px;
     }
+    .header-header {
+      font-size: 50px;
+      padding: 0;
+      margin: 0 auto;
+      font-family: "Open Sans Condensed", sans-serif;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: rgb(45, 138, 102);
+        z-index: 1;
+        border-radius: 50%;
+        bottom: 7px;
+        margin-left: 4px;
+      }
+    }
+  }
 }

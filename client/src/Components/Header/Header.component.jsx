@@ -16,7 +16,7 @@ const Header = ({ hidden }) => {
   return (
     <header className="header-container">
       <div className="header-grid">
-        <div className="header-column">ยังไม่รู้จะใส่อะไร</div>
+        <div className="header-column"></div>
         <div className="header-column">
           <div className="header-header">Plant</div>
         </div>

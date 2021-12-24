@@ -7,10 +7,10 @@ import CollectionItem from "../../Components/collection-item/collection-item.com
 
 import "./category.style.scss";
 
-const CategoryPage = ({ plants: { title, items } }) => {
+const CategoryPage = ({ plants: { header, items } }) => {
   return (
    <div className="category-page">
-     <h1 className="category-title">{title}</h1>
+     <h1 className="category-title">{header}</h1>
       <div className="category-collections">
       {items.map((plant) => (
         <CollectionItem item={plant} key={plant.id} />

@@ -63,7 +63,8 @@ export const convertCollectionsFromFirebaseToMap = async (collections) => {
     return {
       routeName: encodeURI(title.split(' ').join('').toLowerCase()),
       id: doc.id,
-      title,
+      title:title.split(' ').join('').toLowerCase(),
+      header:title,
       items,
     };
   });

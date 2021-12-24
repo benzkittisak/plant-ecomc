@@ -6,7 +6,7 @@ import CollectionItem from "../collection-item/collection-item.component";
 
 import "./plant-preview.style.scss";
 
-const PlantPreview = ({ plants:{header , items , routeName}}) => {
+const PlantPreview = ({ showDetail ,  plants:{title , header , items , routeName}}) => {
   const navigate = useNavigate();
   return (
     <div>
@@ -15,7 +15,7 @@ const PlantPreview = ({ plants:{header , items , routeName}}) => {
       </div>
       <div className="plant-preview">
         {items.slice(0, 4).map((item) => (
-          <CollectionItem key={item.id} item={item}/>
+          <CollectionItem key={item.id} showDetail={showDetail} item={item} title={title}/>
         ))}
       </div>
     </div>

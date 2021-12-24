@@ -13,7 +13,7 @@ const PlantCategoryOverview = ({plants}) => {
         <div className="category-overview">
             {
                 plants.map(({id , ...otherProps}) => 
-                    <PlantPreview key={id} plants={{...otherProps}} />
+                    <PlantPreview showDetail key={id} plants={{...otherProps}} />
                 )
             }
         </div>

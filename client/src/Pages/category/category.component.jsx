@@ -7,6 +7,8 @@ import CollectionItem from "../../Components/collection-item/collection-item.com
 
 import "./category.style.scss";
 
+
+
 const CategoryPage = ({ plants: { header, items } }) => {
   return (
    <div className="category-page">

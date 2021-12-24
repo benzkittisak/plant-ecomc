@@ -1,4 +1,4 @@
-import React , {useEffect} from "react";
+import React , {useEffect , lazy} from "react";
 import { Route, Routes, useParams } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -13,6 +13,8 @@ import { fetchCollectionStart } from "../../redux/shop/shop.action";
 // } from "../../firebase/firebase.util";
 
 import "./shop.style.scss";
+
+const DetailPageContainer = lazy(() => import('../detail/detail.container'));
 
 const ShopPage = ({fetchCollectionStart}) => {
 
@@ -36,6 +38,8 @@ const ShopPage = ({fetchCollectionStart}) => {
           path=":categoryName"
           element={<CategoryPageContainer {...params} />}
         />
+       <Route path=":categoryName/:productName" element={<DetailPageContainer {...params}/>}/>
+
       </Routes>
     </div>
   );

@@ -13,6 +13,11 @@ $border-bottom: 1px solid lightgray;
     position: relative;
     justify-content: space-between;
     width: 100%;
+
+    @media screen and (max-width:800px) {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &-left {
@@ -21,11 +26,22 @@ $border-bottom: 1px solid lightgray;
     max-width: 60%;
     overflow: hidden;
     position: relative;
+
+    @media screen and (max-width:800px) {
+      max-width: 100%;
+      width: 100%;
+    }
     img.detail-image {
       width: 100%;
       object-fit: cover;
       position: relative;
       display: block;
+
+      @media screen and (max-width:800px) {
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+      }
     }
   }
 
@@ -34,6 +50,9 @@ $border-bottom: 1px solid lightgray;
     display: block;
     padding: 10px;
     text-align: left;
+    @media screen and (max-width:800px) {
+      max-width: 100%;
+    }
 
     &-container {
       display: flex;
@@ -47,6 +66,9 @@ $border-bottom: 1px solid lightgray;
         border-bottom: $border-bottom;
         letter-spacing: 3px;
         margin-bottom: 20px;
+        @media screen and (max-width:800px) {
+          font-size: 30px;
+        }
       }
 
       .product-description {

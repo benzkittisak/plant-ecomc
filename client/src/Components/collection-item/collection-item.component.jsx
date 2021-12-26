@@ -7,6 +7,8 @@ import currencyFormatter from "../../assets/utils/currency.formatter";
 import { addItem } from "../../redux/cart/cart.action";
 
 import { ReactComponent as Icon } from "../../assets/icons/shopping-bag.svg";
+import { ReactComponent as EyeIcon} from '../../assets/icons/eye.svg'
+
 import "./collection-item.style.scss";
 
 const CollectionItem = ({ title, item, addItem, showDetail }) => {
@@ -29,7 +31,7 @@ const CollectionItem = ({ title, item, addItem, showDetail }) => {
               className="detail"
               onClick={() => navigate(`${title}/${item.name}`)}
             >
-              รายละเอียด
+              <EyeIcon/>
             </div>
           ) : null}
         </div>

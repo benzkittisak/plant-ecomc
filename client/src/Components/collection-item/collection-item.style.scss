@@ -82,18 +82,15 @@ $green_color: rgb(17, 138, 81);
       position: absolute;
       align-items: center;
       padding: 10px;
-      background: white;
       top: 50%;
-      width: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 20px rgba($color: black, $alpha: 0.1);
 
       .add-to-cart {
         width: 40%;
+        background-color: white;
         display: block;
-        padding: 10px 0px;
-        border-radius: 20px;
+        padding: 10px 20px;
         position: relative;
         cursor: pointer;
         text-align: center;
@@ -113,8 +110,9 @@ $green_color: rgb(17, 138, 81);
         cursor: pointer;
         display: block;
         width: 60%;
-        padding-right: 10px;
+        padding: 10px 20px;
         text-align: center;
+        background: white;
       }
     }
   }
